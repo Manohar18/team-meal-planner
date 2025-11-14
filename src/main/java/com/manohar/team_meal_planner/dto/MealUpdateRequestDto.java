@@ -2,6 +2,7 @@ package com.manohar.team_meal_planner.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Builder;
 import lombok.Data;
 
@@ -16,7 +17,7 @@ public class MealUpdateRequestDto {
     @NotBlank
     private String title;
 
-    @NotBlank
+    @NotNull
     private LocalDate date;
 
     @NotBlank
@@ -28,6 +29,7 @@ public class MealUpdateRequestDto {
     @NotNull
     private Long version;
 
+    @Positive
     @NotNull
     private Integer maxAttendees;
 }

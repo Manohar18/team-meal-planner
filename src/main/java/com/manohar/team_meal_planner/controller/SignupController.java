@@ -36,6 +36,7 @@ public class SignupController {
         return ResponseEntity.created(location).body(signup);
     }
 
+    @GetMapping
     public List<Signup> listSignups(@RequestParam("personId") Long personId,
                                     @RequestParam("date")
                                     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)LocalDate date,

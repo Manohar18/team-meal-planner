@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 
@@ -42,5 +43,11 @@ public class PersonServiceImpl implements PersonService {
     public Person getPersonById(Long id){
        return personRepository.findById(id)
                .orElseThrow(() -> new NoSuchElementException("Person not found with id:" + id));
+    }
+
+
+    @Override
+    public List<Person> getAllPersons(){
+        return personRepository.findAll();
     }
 }

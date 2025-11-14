@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/people")
@@ -32,6 +33,11 @@ public class PersonController {
     @GetMapping("/{id}")
     public Person getPerson(@PathVariable Long id){
         return personService.getPersonById(id);
+    }
+
+    @GetMapping
+    public List<Person> getAllPersons(){
+        return personService.getAllPersons();
     }
 
 

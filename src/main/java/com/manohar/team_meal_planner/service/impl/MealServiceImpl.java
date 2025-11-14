@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -49,6 +50,11 @@ public class MealServiceImpl implements MealService{
     @Override
     public Meal getMealById(Long mealId) throws NoSuchElementException {
         return mealRepository.findById(mealId).orElseThrow(()-> new NoSuchElementException("Meal Not found with id:" + mealId));
+    }
+
+    @Override
+    public List<Meal> getAllMeals() throws NoSuchElementException{
+        return mealRepository.findAll();
     }
 
     @Override

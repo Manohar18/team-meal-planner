@@ -64,6 +64,11 @@ public class MealController {
         return mealService.getMealById(id);
     }
 
+    @GetMapping("/all")
+    public List<Meal> getAllMeal(){
+        return mealService.getAllMeals();
+    }
+
 
     @PutMapping("/{id}")
     public Meal updateMeal(@PathVariable Long id,
